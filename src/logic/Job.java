@@ -2,7 +2,7 @@ package logic;
 
 public class Job implements Runnable {
 
-    // This is job, hourly rate increase to wallet
+    // This is job, going rate increase to wallet
 
     static boolean works;
     public static void stopJob() {
@@ -15,7 +15,7 @@ public class Job implements Runnable {
         works = true;
 
         while (works) {
-            Numbers.getPaidHourly();
+            Numbers.getPaidRate();
             try {
                 Thread.sleep(250);
             } catch (Exception e) {

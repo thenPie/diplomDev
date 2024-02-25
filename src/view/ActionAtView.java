@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import logic.Job;
 
+// Choose options in each view
 public class ActionAtView {
 
     static Scanner userIn = new Scanner(System.in);
@@ -24,9 +25,9 @@ public class ActionAtView {
         Integer chooser = userIn.nextInt();
         if (chooser == 1) {
             // command to stop working and show home view
-            Job.stopJob();
-            View.stopWork();
-            View.home();
+            Job.stopJob();   // stopping Job thread
+            View.stopWork(); // stop showing that you're in work
+            View.home();     // returns to home
         }
         if (chooser == 2) {
             // command to check the hourly rate at work

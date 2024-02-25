@@ -11,7 +11,13 @@ public class View {
         System.out.flush();  
     }
 
-    
+    // wait for information timestop
+    public static void holdTime() {
+        try {
+            Thread.sleep(1250);
+        } catch (Exception e) {
+        }
+    }
     
     // View of home actions
     public void homeStarter() {
@@ -31,11 +37,8 @@ public class View {
 
     public static void wallet() {
         clearScreen();
-        System.out.println("You have " + Numbers.getWallet() + " money in your wallet");
-        try {
-            Thread.sleep(1250);
-        } catch (Exception e) {
-        }
+        System.out.printf("You have %.2f money in your wallet", Numbers.getWallet());
+        holdTime();
         clearScreen();
         // and then back to home view
     }
@@ -66,11 +69,8 @@ public class View {
 
     public static void hourlyRate() {
         clearScreen();
-        System.out.println("You have " + Numbers.getHourlyRate() + " money in your wallet");
-        try {
-            Thread.sleep(1250);
-        } catch (Exception e) {
-        }
+        System.out.println("You have " + Numbers.getRate() + " money in your wallet");
+        holdTime();
         clearScreen();
         // and then back to work view
     }
