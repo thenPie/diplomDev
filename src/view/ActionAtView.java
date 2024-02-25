@@ -19,6 +19,14 @@ public class ActionAtView {
             // command to check the money in wallet
             View.wallet();
         }
+        if (chooser == 3) {
+            // go out to spend money
+            View.out();
+        }
+        if (chooser == 4) {
+            // check the resources
+            View.resources();
+        }
     }
 
     public static void atWork() {
@@ -31,7 +39,28 @@ public class ActionAtView {
         }
         if (chooser == 2) {
             // command to check the hourly rate at work
-            View.hourlyRate();
+            View.rate();
+        }
+    }
+
+    public static void atOut() {
+        Integer chooser = userIn.nextInt();
+        if (chooser == 1) {
+            // return home
+            View.stopOut();
+        }
+        if (chooser == 2) {
+            // check the wallet
+            View.wallet();
+        }
+        if (chooser == 3) {
+            // buy food
+        }
+        if (chooser == 4) {
+            // pay bills
+        }
+        if (chooser == 5) {
+            // have fun
         }
     }
 

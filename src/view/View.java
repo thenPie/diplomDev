@@ -2,6 +2,7 @@ package view;
 
 import logic.Job;
 import logic.Numbers;
+import logic.Resources;
 
 public class View {
 
@@ -20,18 +21,14 @@ public class View {
     }
     
     // View of home actions
-    public void homeStarter() {
-        clearScreen();
-        System.out.println("You're at your home. What are you doing? THIS IS STARTER\n" +
-                           "1. Go do work to get money\n" +
-                           "2. Check your wallet");
-    }
 
     public static void home() {
         clearScreen();
         System.out.println("You're at your home. What are you doing?\n" +
                            "1. Go do work to get money\n" +
-                           "2. Check your wallet");
+                           "2. Check your wallet\n" +
+                           "3. Go out to spend money\n" +
+                           "4. Check the resources");
         ActionAtView.atHome();
     }
 
@@ -67,12 +64,41 @@ public class View {
 
     }
 
-    public static void hourlyRate() {
+    public static void rate() {
         clearScreen();
         System.out.println("You have " + Numbers.getRate() + " money in your wallet");
         holdTime();
         clearScreen();
         // and then back to work view
+    }
+
+    // go out to spend money options
+    static boolean outOn;
+    static void stopOut() {
+        outOn = false;
+    }
+    public static void out() {
+        clearScreen();
+        
+        outOn = true;
+        while (outOn) {
+            System.out.println("You're out, wallet in the pocket. What you do?\n" +
+                               "1. Return home\n" +
+                               "2. Check the wallet\n" +
+                               "3. Buy food\n" +
+                               "4. Pay bills\n" +
+                               "5. Have fun\n");
+            ActionAtView.atOut();
+        }
+    }
+
+    public static void resources() {
+        clearScreen();
+        System.out.printf("You have %.2f food and each %d milliseconds you spend %.2f\n" +
+                          "You have %.2f bills and each %d milliseconds you spend %.2f",
+                          Numbers.getFood(), Resources.getMillisec(), Numbers.getFoodUsage(),
+                          Numbers.getBills(), Resources.getMillisec(), Numbers.getBillsUsage());
+        holdTime();
     }
 
 }
