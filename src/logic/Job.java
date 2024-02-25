@@ -11,9 +11,7 @@ public class Job implements Runnable {
 
     @Override
     public void run() {
-        
         works = true;
-
         while (works) {
             Numbers.getPaidHourly();
             try {

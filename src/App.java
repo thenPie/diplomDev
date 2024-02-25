@@ -1,3 +1,4 @@
+import logic.Resources;
 import view.View;
 
 public class App {
@@ -6,10 +7,16 @@ public class App {
         boolean gameOn = true;
         // View location = new View();
         
-        while (gameOn) {
-            View.home();
+        Resources resources = new Resources();
+        Thread resees = new Thread(resources);
+        if (gameOn) {
+            resees.start();
         }
-
+        
+        while (gameOn) {
+                View.home();
+        }
+        
     }
 
 }

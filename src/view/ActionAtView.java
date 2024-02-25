@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 
 import logic.Job;
+import logic.Out;
 
 public class ActionAtView {
 
@@ -18,6 +19,14 @@ public class ActionAtView {
             // command to check the money in wallet
             View.wallet();
         }
+        if (chooser == 3) {
+            // command to go out spend money
+            View.spendArea();
+        }
+        if (chooser == 4) {
+            // check resources
+            View.resources();
+        }
     }
 
     public static void atWork() {
@@ -31,6 +40,31 @@ public class ActionAtView {
         if (chooser == 2) {
             // command to check the hourly rate at work
             View.hourlyRate();
+        }
+    }
+
+    public static void atOut() {
+        Integer chooser = userIn.nextInt();
+        if (chooser == 1) {
+            // buying food
+            Out.food();
+        }
+        if (chooser == 2) {
+            // pay utilities
+            Out.utilities();
+        }
+        if (chooser == 3) {
+            // have fun
+            Out.fun();
+        }
+        if (chooser == 4) {
+            // check the wallet
+            Out.wallet();
+        }
+        if (chooser == 5) {
+            // go home
+            View.goHome();
+            View.home();
         }
     }
 
